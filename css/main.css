@@ -1,0 +1,26 @@
+body {
+    background-color: white;
+}
+body > h1 {
+    text-align: center;
+    color:  red;
+    font-size: 96px;
+    font-family: "Lobster", cursive, serif;
+    text-shadow: 1px 1px 1px white;
+}
+
+body > .navbar-default {
+    color: darkgreen;
+    font-style: italic;
+    font-weight: 200;
+    font-size: medium;
+}
+.footer {
+    bottom : 2px;
+    height : 40px;
+    margin-top : 40px;
+    text-align: center;
+    vertical-align: middle;
+    position:fixed;
+    width:100%;
+}
