@@ -1,5 +1,5 @@
 body {
-    background-color: white;
+    background-color: #ffffcc;
 }
 body > h1 {
     text-align: center;
@@ -14,6 +14,13 @@ body > .navbar-default {
     font-style: italic;
     font-weight: 200;
     font-size: medium;
+}
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: azure;
 }
 .footer {
     bottom : 2px;
