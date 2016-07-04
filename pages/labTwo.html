@@ -1,39 +1,167 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html lang="en-US">
 <head>
-    <meta charset="UTF-8">
-    <title>Lab Project 2</title>
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Droid+Serif|Lobster" />
-    <style>
-        body {
-            background-color: #ffffcc;
-        }
+	<meta charset="UTF-8">
+	<title>Patient Information Site</title>
+	<style type="text/css">
+body {
+	margin: 2em 5em;
+	font-family:Georgia, "Times New Roman", Times, serif;
+}
+h1, legend {
+	font-family:Arial, Helvetica, sans-serif;
+}
+label, input, select {
+	display:block;
+}
+input, select {
+	margin-bottom: 1em;
+}
+fieldset {
+	margin-bottom: 2em;
+	padding: 1em;
+}
+fieldset fieldset {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
 
-        body>p {
-            color: #006600;
-            margin-left: 20px;
-            font-size: 65px;
-            text-align: center;
-            font-family: "Lobster", cursive, serif;
-        }
-        .footer {
-            bottom : 2px;
-            height : 40px;
-            margin-top : 40px;
-            text-align: center;
-            vertical-align: middle;
-            position:fixed;
-            width:100%;
-        }
-    </style>
+	</style>	
 </head>
 <body>
-<p> Coming soon!! Keep in touch</p>
-<div class="footer">
+<form id="register">
+<h1>Patient Registration Form</h1>
+ <fieldset> 
+    <legend>Personal details</legend> 
+    <div> 
+        <label>Patient ID or Name
+        <input id="given-name" name="given-name" type="text" placeholder="Patient ID or name only" required autofocus> 
+		</label>
+    </div>
+    Current date and time &nbsp;&nbsp;
+<span id="datenTime"></span>
+  <p>
+    <table>
+		
+		<label for="ptemp">Patient Temperature </label> 
+		<tr>
+		<td><input id="ptemp"type="number"placeholder="100" required></td>
+    	<td><input id="celcius" name="deg" type="radio"></td>
+        <td><label for="celcius"> &#x2103;</label></td>
+        <td><input id="fahrenheit" name="deg" type="radio"></td>
+        <td><label for="fahrenheit">&#x2109;</label></td>
+        <tr>
+    </table> 
+    <div>
+		<table>
+        <label>Pulse Rate </label>
+		<tr>
+        <td><input id="pulserate" name="pulserate" type="number" placeholder="80" required></td>
+		<td> per minute </td>
+		</tr>
+		</table>
+		 
+    </div> 
+    <div> 
+        <label>Patient Blood Pressure
+		<table>
+		<tr>
+		<td><label> Systolic Pressure</label>
+		<td><input id="syspressure" type="number" required>
+		<td>mm Hg</td>
+		
+		</tr>
+		<tr>
+		<td><label> Diastolic Pressure</label>
+		<td><input id="diaspressure" type="number" required>
+		<td>mm Hg</td>
+		</tr>
+		</table>
+		
+    </div>    
+     <div>
+		<table>
+        <label>Respiratory rate</label> 
+        <tr>
+		<td><input id="resprate" name="resprate" type="number" min="1" placeholder="Eg. 12" required></td>
+		
+		<td>breaths per minute</td>
+		</tr>
+		</table>
+		 
+    </div> 
+	
+  </fieldset>
+  <fieldset> 
+    <legend>Universal Pain Assessment Tool</legend> 
+   
+    <div> 
+        <label>Pain  
+        <input id="pain" name="pain" list="pain-level" type="text" required> 
+        <datalist id="pain-level"> 
+        	<option label="no Pain" value="0"></option> 
+        	<option label="mild pain" value="1-3"></option> 
+        	<option label="moderate pain" value="3-7"></option> 
+        	<option label="Severe pain" value="8-9"></option> 
+        	<option label="Worst pain possible" value="10"></option> 
+        </datalist>
+		</label> 
+    </div> 
+  </fieldset> 
+  <fieldset> 
+    <legend>Pulse oximiter measurement</legend> 
+ 
+    <div>
+		<table>
+        <label>Oxygen saturation </label>
+        <tr>
+		<td><input id="oxygensaturation" name="oxygensaturation" type="number" placeholder="Enter a percentage" required></td>
+		<td> % </td>
+		</tr>
+		</table>  
+    </div>
+    
+  </fieldset> 
+  <fieldset> 
+	<legend>Blood glucose level</legend> 
+		 <table> 
+        <tr>
+        <td><input id="bloodglucoselevel" name="bloodglucoselevel" type="number" step ="0.1" placeholder="Enter a bloodglucoselevel" required></td>
+		 <td>mmol/L</td>
+		</tr> 
+		</table>
+		
+  </fieldset>  
+   <div> 
+		<button type=submit onclick="myFunction()">Submit</button> 
+   </div> 
+</form>
+<script>
+// to display the date and time using javascript
+document.getElementById("datenTime").innerHTML = Date();
 
-    <!-- ################################################################################################ -->
-    <p>Copyright &copy; 2016 - Sharmistha Dutta & Andrew Brown - All Rights Reserved -</p>
+function myFunction() {
+	
+    var bloodglucoselevel = document.getElementById("bloodglucoselevel");
+	var pulserate = document.getElementById("pulserate");
+	var resprate = document.getElementById("resprate");
+	var diaspressure = document.getElementById("diaspressure");
+	//validating blood sugar level
+    if (isNaN(bloodglucoselevel) || bloodglucoselevel < 4 || bloodglucoselevel > 15) {
+        alert("Bloode sugar ranges should be between 4.0 and 15 mmol/L");
+    }
+	//validating pulse rate
+	if (isNaN(pulserate) || pulserate < 40 || pulserate > 160) {
+        alert("Pulse rate normally should be between 40 and 160 per minute");
+    }
+	//validating respiratory rate
+	if(isNaN(resprate) || resprate<12 || resprate>25){
+	alert("Respiratory rate is abnormal");
+	}
+	
+	
+}
 
-</div>
+</script> 
 </body>
 </html>
