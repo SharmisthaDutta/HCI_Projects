@@ -36,17 +36,17 @@
 <form id="register">
     <h1>Patient Registration Form</h1>
     <fieldset>
-        <legend>Personal details</legend>
-        <div>
-            <label>Patient ID or Name
-                <input id="given-name" name="given-name" type="text" placeholder="Patient ID or name only" required
-                       autofocus>
-            </label>
+        <legend>Personal Details</legend>
+        <div title="Use this field for identifying the patient by name or his/her patient ID">
+            <label for="given-name">Patient ID or Name</label>
+            <input id="given-name" name="given-name" type="text" placeholder="Patient ID or name only" required
+                   autofocus>
         </div>
 
-        Current date and time &nbsp;&nbsp;
-        <span id="datenTime"></span>
-        <p>
+        <div title="This field should represent the date/time when the patient data collection was started">
+            <label for="datenTime">Current date and time</label>
+            <input id="datenTime" name="datenTime" type="text" placeholder="UTC" required>
+        </div>
 
         <table>
             <label for="ptemp">Patient Temperature </label>
@@ -69,19 +69,19 @@
         </div>
         <div>
             <label>Patient Blood Pressure</label>
-                <table>
-                    <tr>
-                        <td><label> Systolic Pressure</label>
-                        <td><input id="syspressure" type="number" required>
-                        <td>mm Hg</td>
+            <table>
+                <tr>
+                    <td><label> Systolic Pressure</label>
+                    <td><input id="syspressure" type="number" required>
+                    <td>mm Hg</td>
 
-                    </tr>
-                    <tr>
-                        <td><label> Diastolic Pressure</label>
-                        <td><input id="diaspressure" type="number" required>
-                        <td>mm Hg</td>
-                    </tr>
-                </table>
+                </tr>
+                <tr>
+                    <td><label> Diastolic Pressure</label>
+                    <td><input id="diaspressure" type="number" required>
+                    <td>mm Hg</td>
+                </tr>
+            </table>
         </div>
         <div>
             <table>
@@ -144,7 +144,7 @@
 
 <script>
     // to display the date and time using javascript
-    document.getElementById("datenTime").innerHTML = Date();
+    document.getElementById("datenTime").value = Date();
 
     function myFunction() {
         var bloodglucoselevel = document.getElementById("bloodglucoselevel");
