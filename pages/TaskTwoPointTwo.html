@@ -2,37 +2,72 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Task 2.2</title>
-    <style>
-        body {
-            background-color: #ffffcc;
-        }
-
-        body>p {
-            color: #006600;
-            margin-left: 20px;
-            font-size: 65px;
-            text-align: center;
-        }
-        .footer {
-            bottom : 2px;
-            height : 40px;
-            margin-top : 40px;
-            text-align: center;
-            vertical-align: middle;
-            position:fixed;
-            width:100%;
-        }
-    </style>
+    <title>Task 2.2: Usage Scenarios</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="../css/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Droid+Serif|Lobster"/>
+    <link rel="stylesheet" href="../css/main.css"/>
 </head>
 <body>
-    <p> Coming soon!! Keep in touch</p>
 
-    <div class="footer">
+<h1>Task 2.2: Usage Scenarios</h1>
+<div class="container">
+    <h3>Candidate Applications</h3>
+    <ol>
+        <li>Optimize coffee shop order taking and inventory management: design space already occupied by commercial
+            tools
+        </li>
+        <li>Infer emotional state of a child on a car trip and alert parents: too much research needed on sentiment
+            analysis
+        </li>
+        <li><b>Entertain a child in the back seat of a car trip</b>: difficult to implement if using voice commands but
+            interesting
+        </li>
+    </ol>
+    <p>We chose a child educational application (#3) since it offers some degree of design difficulty but we have an
+        accessible user population (Benjamin, age 2). In designing the application, we considered that the intent of
+        the application was to allow some degree of interaction between a non-driving parent and the child; the
+        purpose is not to foster independent play since at the target age (2-3 years old) children have a relatively
+        short attention span. While not excluding independent play, the type of cooperative play that involves both
+        parent and child and the outside environment (as opposed to the virtual environment of the application) seems
+        most educational and offers the longest entertainment value. Since this application is designed for long car
+        trips, this is an important design consideration.</p>
 
-        <!-- ################################################################################################ -->
-        <p>Copyright &copy; 2016 - Sharmistha Dutta & Andrew Brown - All Rights Reserved -</p>
+    <h3>Scenarios</h3>
+    <p>
+        The application will roughly consist of identifying various illustrated objects on a screen. Since we would
+        like to design for cooperative play, we describe two user personas: 1) the <i>child</i>, 2-3 years of age,
+        strapped in a car seat in the back seat of a moving vehicle and holding a computer tablet, and 2) a
+        <i>parent</i> or adult relative, sitting in the passenger seat of the vehicle holding a smart phone.</p>
+    <ol>
+        <li><i>Independent Identification</i>: the application displays an illustration of an object (e.g. car, truck,
+            motorcycle, etc.), the child either speaks the name of the object or says, "what is that?", the application
+            either replies with a success message (e.g. song?) or replies with the name of the object, the child moves
+            to the next illustration.
+        </li>
+        <li><i>Cooperative Identification</i>: the parent chooses an illustration of an object (e.g. car, truck,
+            motorcycle, etc.), the child either speaks the name of the object or says, "what is that?", the parent
+            speaks to the child explaining the object and answering any questions, the parent marks the object as
+            complete and chooses the next illustration.
+        </li>
+        <li><i>Environment Identification</i>: the application (or parent) chooses an illustration of an object (e.g.
+            car, truck, motorcycle, etc.), the child observes the environment outside the vehicle and points at the
+            object when (if) identified, the parent marks the object as found, the application (or parent) chooses
+            another illustration.
+        </li>
+    </ol>
+    <p>
+        Several notes: it seems likely that several implementation details may be a challenge to the application's
+        success but a distinct advantage if done correctly. For example, the ability of the application to correctly
+        parse a child's speech seems dubious but, if implemented, highly valuable. Also, the ability to pair the
+        child's tablet and the parent's phone seems complicated, though very possible, but may involve a significant
+        amount of infrastructure work.
+    </p>
+</div>
 
-    </div>
+<div class="footer">
+    <p>Copyright &copy; 2016 - Sharmistha Dutta & Andrew Brown - All Rights Reserved -</p>
+</div>
+
 </body>
 </html>
