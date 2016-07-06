@@ -28,7 +28,6 @@ body > .navbar-default {
     margin-top : 40px;
     text-align: center;
     vertical-align: middle;
-    position:fixed;
     width:100%;
 }
 body>p {
