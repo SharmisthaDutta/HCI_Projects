@@ -11,6 +11,7 @@
    <style type="text/css">
         body {
             margin-left: 50px;
+            margin-right: 50px;
         }
         *{
             font-size: 20px;
@@ -36,8 +37,8 @@
         }
 
        .rbtn{
-           width:25px;
-           height:25px;
+           width:15px;
+           height:15px;
 
        }
 
@@ -50,13 +51,13 @@
     <fieldset>
         <legend>Personal Details</legend>
         <div class="row">
-                <div class ="col-xs-4" title="Use this field for identifying the patient by name or his/her patient ID">
+                <div class ="col-md-6" title="Use this field for identifying the patient by name or his/her patient ID">
                     <label for="given-name">Patient ID or Name</label>
                     <input class="form-control" id="given-name" name="given-name" type="text" placeholder="Patient ID or name only" required
                            autofocus>
                 </div>
 
-                <div class="col-xs-4" title="This field should represent the date/time when the patient data collection was started">
+                <div class="col-md-6" title="This field should represent the date/time when the patient data collection was started">
 
                     <label >Current date and time</label>
 
@@ -73,23 +74,23 @@
     <fieldset>
         <legend>Vital Signs</legend>
         <div class="row">
-            <div class="col-xs-4" title="This field should represent the patient's body temperature">
+            <div class="col-md-6" title="This field should represent the patient's body temperature">
                 <label for="ptemp">Patient Temperature </label>
                 <div class="row">
                     <div class="col-xs-4">
                         <input class="form-control" id="ptemp" type="number" placeholder="100" required>
                     </div>
                     <div class="col-xs-1">
-                        <input class="form-control" id="celcius" name="deg" type="radio" class="rbtn"></div>
+                        <input class="form-control" id="celcius"  type="radio" name="rbtn"></div>
                     <div class="col-xs-1">
                         <label for="celcius"> &#x2103;</label></div>
                     <div class="col-xs-1">
-                        <input class="form-control" id="fahrenheit" name="deg" type="radio" class="rbtn"></div>
+                        <input class="form-control" id="fahrenheit"  type="radio" name="rbtn"></div>
                     <div class="col-xs-1">
                         <label for="fahrenheit">&#x2109;</label></div>
                 </div>
             </div>
-            <div class="col-xs-4" title="This field should represent the patient's pulse rate">
+            <div class="col-md-6" title="This field should represent the patient's pulse rate">
 
                 <label>Pulse Rate </label>
                 <div class="row">
@@ -108,7 +109,7 @@
                <div class="row">
 
                     <div class="col-xs-4">
-                        <input id="syspressure" type="number" required>
+                        <input class="form-control" id="syspressure" type="number" required>
                     </div>
                     <div class="col-xs-2">mmHg</div>
                </div>
@@ -118,7 +119,7 @@
                <div class="row">
 
                    <div class="col-xs-4">
-                       <input id="diaspressure" type="number" required>
+                       <input class="form-control" id="diaspressure" type="number" required>
                    </div>
                    <div class="col-xs-2">mmHg</div>
                </div>
@@ -153,12 +154,12 @@
                     <td>Pain level 10 maximum pain</td>
                 </tr>
                 <tr>
-                    <td><input class="form-control" id="pain0" type="radio" class="rbtn"></td>
-                    <td><input class="form-control" id="pain2" type="radio" class="rbtn"></td>
-                    <td><input class="form-control" id="pain3to5" type="radio" class="rbtn"></td>
-                    <td><input class="form-control" id="pain5to7" type="radio" class="rbtn"></td>
-                    <td><input class="form-control" id="pain7to9" type="radio" class="rbtn"></td>
-                    <td><input class="form-control" id="pain10" type="radio" class="rbtn"></td>
+                    <td><input class="form-control" id="pain0" type="radio" name="rbtn"></td>
+                    <td><input class="form-control" id="pain2" type="radio" name="rbtn"></td>
+                    <td><input class="form-control" id="pain3to5" type="radio" name="rbtn"></td>
+                    <td><input class="form-control" id="pain5to7" type="radio" name="rbtn"></td>
+                    <td><input class="form-control" id="pain7to9" type="radio" name="rbtn"></td>
+                    <td><input class="form-control" id="pain10" type="radio" name="rbtn"></td>
                 </tr>
                 </tbody>
             </table>
@@ -167,7 +168,7 @@
     <fieldset>
         <legend>Pulse oximiter measurement</legend>
         <div class="row">
-                <div class="col-xs-4"title="This field should represent the patient's oxygen saturation level">
+                <div class="col-md-6"title="This field should represent the patient's oxygen saturation level">
 
                     <label>Oxygen saturation </label>
                         <div class="row">
@@ -178,7 +179,7 @@
 
                 </div>
 
-                <div class="col-xs-4" title="This field should represent the patient's respiratory rate per minute">
+                <div class="col-md-6" title="This field should represent the patient's respiratory rate per minute">
 
                          <label>Respiratory rate</label>
                              <div class="row">
@@ -201,7 +202,7 @@
         <legend>Blood glucose level</legend>
         <div class="form-group" title="Enter blood glucose level">
             <div class="row">
-                <div class="col-xs-4">
+                <div class="col-md-6">
                 <input class="form-control" id="bloodglucoselevel" name="bloodglucoselevel" type="number" min="0" step="0.1"
                            placeholder="Enter a bloodglucoselevel" required>
                 </div>
@@ -211,7 +212,7 @@
     </fieldset>
 
     <div>
-        <button type="button" class="btn btn-info">Submit</button>
+        <button type="button" class="btn btn-info" id="btn">Submit</button>
     </div>
 </form>
 <!--scripts-->
@@ -224,8 +225,14 @@
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/additional-methods.min.js"></script>
 <script>
+
     $(document).ready(function(){
-      $("#registration").validate();
+       $("#btn").click(function()
+       {
+           $("#registration").validate();
+
+       });
+
     });
 </script>
 
