@@ -12,22 +12,28 @@
         body {
             margin-left: 50px;
             margin-right: 50px;
+            background-color: #e5e0e0;
         }
-        *{
+      /*  *{
             font-size: 20px;
-        }
+        } */
+
         body>form>h1{
             text-align:center;
             font-stretch: extra-expanded;
             font-size: 60px;
-            color:#7e807d;
+            color: darkblue;
         }
 
        body form>fieldset>legend{
            font-family: "Microsoft Himalaya",sans-serif;
            font-size: 50px;
-           color: #7e807d;
+           color: #8B0000;
 
+       }
+       label{
+           color:darkblue;
+           font-size: 20px;
        }
         span{
             font-family: "Microsoft Himalaya",sans-serif;
@@ -35,8 +41,19 @@
 
 
         }
+        /* selectors for table */
+        div>table>thead>tr>th{
+            color:darkblue;
+            font-size: 20px;
+        }
+        div>table>tbody>tr>td{
 
-       .rbtn{
+            font-size: 20px;
+        }
+        /*selector for unit of measurement */
+        
+
+       .deg,.rbtn{
            width:15px;
            height:15px;
 
@@ -45,7 +62,7 @@
     </style>
 </head>
 <body>
-<form role="form" id="registration">
+<form role="form" id="registration" class="form-horizontal" >
 
     <h1>Patient Registration Form</h1>
     <fieldset>
@@ -62,7 +79,7 @@
                     <label >Current date and time</label>
 
                         <div class="input-group">
-                            <input  id="date-picker-2" type="text" class="date-picker form-control" placeholder="UTC" required />
+                            <input  id="date-picker-2" name="date-picker-2" type="text" class="date-picker form-control" placeholder="UTC" required />
                             <label for="date-picker-2" class="input-group-addon btn"><span class="glyphicon glyphicon-calendar"></span>
 
                             </label>
@@ -78,14 +95,14 @@
                 <label for="ptemp">Patient Temperature </label>
                 <div class="row">
                     <div class="col-xs-4">
-                        <input class="form-control" id="ptemp" type="number" placeholder="100" required>
+                        <input class="form-control" id="ptemp" name="ptemp" type="number" placeholder="100" required>
                     </div>
                     <div class="col-xs-1">
-                        <input class="form-control" id="celcius"  type="radio" name="rbtn"></div>
+                        <input class="form-control" id="celcius"  type="radio" name="deg"></div>
                     <div class="col-xs-1">
                         <label for="celcius"> &#x2103;</label></div>
                     <div class="col-xs-1">
-                        <input class="form-control" id="fahrenheit"  type="radio" name="rbtn"></div>
+                        <input class="form-control" id="fahrenheit"  type="radio" name="deg"></div>
                     <div class="col-xs-1">
                         <label for="fahrenheit">&#x2109;</label></div>
                 </div>
@@ -95,7 +112,7 @@
                 <label>Pulse Rate </label>
                 <div class="row">
                     <div class="col-xs-4">
-                <input class="form-control" id="pulserate" name="pulserate" type="number" placeholder="80" required></div>
+                <input class="form-control" id="pulserate" name="pulserate" type="number" placeholder="80" min="0" required></div>
                     <div class="row">  per minute</div>
                 </div>
             </div>
@@ -109,7 +126,7 @@
                <div class="row">
 
                     <div class="col-xs-4">
-                        <input class="form-control" id="syspressure" type="number" required>
+                        <input class="form-control" name="syspressure" id="syspressure" type="number" min="0" required>
                     </div>
                     <div class="col-xs-2">mmHg</div>
                </div>
@@ -119,7 +136,7 @@
                <div class="row">
 
                    <div class="col-xs-4">
-                       <input class="form-control" id="diaspressure" type="number" required>
+                       <input class="form-control" name="diaspressure" id="diaspressure" type="number" min="0" required>
                    </div>
                    <div class="col-xs-2">mmHg</div>
                </div>
@@ -204,7 +221,7 @@
             <div class="row">
                 <div class="col-md-6">
                 <input class="form-control" id="bloodglucoselevel" name="bloodglucoselevel" type="number" min="0" step="0.1"
-                           placeholder="Enter a bloodglucoselevel" required>
+                           placeholder="Enter a blood glucose level" required>
                 </div>
                 <div class="col-xs-2"> mmol/L</div>
             </div>
@@ -229,9 +246,35 @@
     $(document).ready(function(){
        $("#btn").click(function()
        {
-           $("#registration").validate();
-
+           var validator = $( "#registration" ).validate({
+               rules: {
+                   deg: {
+                       required: true
+                   },
+                   rbtn: {
+                       required: true
+                   }
+               },
+               highlight: function(element) {
+                   $(element).closest('.form-group').addClass('has-error');
+               },
+               unhighlight: function(element) {
+                   $(element).closest('.form-group').removeClass('has-error');
+               },
+               errorElement: 'span',
+               errorClass: 'help-block',
+               errorPlacement: function(error, element) {
+                   if(element.parent('.input-group').length) {
+                       error.insertAfter(element.parent());
+                   } else {
+                       error.insertAfter(element);
+                   }
+               }
+           });
+           validator.form();
        });
+
+
 
     });
 </script>
