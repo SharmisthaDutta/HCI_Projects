@@ -4,153 +4,146 @@
     <title>Patient Registration Form Emergency</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"  media="all">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" media="all">
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Droid+Serif|Lobster"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 
-   <style type="text/css">
+    <style type="text/css">
         body {
             margin-left: 50px;
             margin-right: 50px;
             background-color: #e5e0e0;
         }
-      /*  *{
-            font-size: 20px;
-        } */
 
-        body>form>h1{
-            text-align:center;
+        body > form > h1 {
+            text-align: center;
             font-stretch: extra-expanded;
             font-size: 60px;
             color: darkblue;
         }
 
-       body form>fieldset>legend{
-           font-family: "Microsoft Himalaya",sans-serif;
-           font-size: 50px;
-           color: #8B0000;
-
-       }
-       label{
-           color:darkblue;
-           font-size: 20px;
-       }
-        span{
-            font-family: "Microsoft Himalaya",sans-serif;
-            font-size: 30px;
-
+        body form > fieldset > legend {
+            font-family: "Microsoft Himalaya", sans-serif;
+            font-size: 50px;
+            color: #8B0000;
 
         }
+
+        fieldset {
+            margin-top: 20px;
+        }
+
+        fieldset legend {
+            line-height: 1em;
+            margin: 0;
+        }
+
+        label {
+            color: darkblue;
+            font-size: 20px;
+        }
+
+        input[type=radio] {
+            border: none;
+            box-shadow: none;
+        }
+
+        .help-block {
+            font-size: 14px;
+        }
+
         /* selectors for table */
-        div>table>thead>tr>th{
-            color:darkblue;
+        div > table > thead > tr > th {
+            color: darkblue;
             font-size: 20px;
         }
-        div>table>tbody>tr>td{
 
+        div > table > tbody > tr > td {
             font-size: 20px;
         }
-        /*selector for unit of measurement */
-        
-
-       .deg,.rbtn{
-           width:15px;
-           height:15px;
-
-       }
-
     </style>
 </head>
 <body>
-<form role="form" id="registration" class="form-horizontal" >
+<form role="form" id="registration" class="form-horizontal">
 
     <h1>Patient Registration Form</h1>
     <fieldset>
         <legend>Personal Details</legend>
         <div class="row">
-                <div class ="col-md-6" title="Use this field for identifying the patient by name or his/her patient ID">
-                    <label for="given-name">Patient ID or Name</label>
-                    <input class="form-control" id="given-name" name="given-name" type="text" placeholder="Patient ID or name only" required
-                           autofocus>
+            <div class="col-md-6" title="Use this field for identifying the patient by name or his/her patient ID">
+                <label for="given-name">Patient ID or Name</label>
+                <input class="form-control" id="given-name" name="given-name" type="text"
+                       placeholder="Patient ID or name only" required
+                       autofocus>
+            </div>
+
+            <div class="col-md-6"
+                 title="This field should represent the date/time when the patient data collection was started">
+                <label>Current Date</label>
+                <div class="input-group">
+                    <input id="date-picker-2" name="date-picker-2" type="text" class="date-picker form-control"
+                           placeholder="UTC" required/>
+                    <label for="date-picker-2" class="input-group-addon btn">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </label>
                 </div>
-
-                <div class="col-md-6" title="This field should represent the date/time when the patient data collection was started">
-
-                    <label >Current date and time</label>
-
-                        <div class="input-group">
-                            <input  id="date-picker-2" name="date-picker-2" type="text" class="date-picker form-control" placeholder="UTC" required />
-                            <label for="date-picker-2" class="input-group-addon btn"><span class="glyphicon glyphicon-calendar"></span>
-
-                            </label>
-                        </div>
-
-                 </div>
+            </div>
         </div>
     </fieldset>
+
     <fieldset>
         <legend>Vital Signs</legend>
         <div class="row">
-            <div class="col-md-6" title="This field should represent the patient's body temperature">
-                <label for="ptemp">Patient Temperature </label>
-                <div class="row">
-                    <div class="col-xs-4">
-                        <input class="form-control" id="ptemp" name="ptemp" type="number" placeholder="100" required>
-                    </div>
-                    <div class="col-xs-1">
-                        <input class="form-control" id="celcius"  type="radio" name="deg"></div>
-                    <div class="col-xs-1">
-                        <label for="celcius"> &#x2103;</label></div>
-                    <div class="col-xs-1">
-                        <input class="form-control" id="fahrenheit"  type="radio" name="deg"></div>
-                    <div class="col-xs-1">
-                        <label for="fahrenheit">&#x2109;</label></div>
+            <div class="col-md-6"
+                 title="Most people think of a 'normal' body temperature as an oral temperature of 98.6°F (37°C). This is an average of normal body temperatures. Your temperature may actually be 1°F (0.6°C) or more above or below 98.6°F (37°C). Source: http://www.webmd.com/first-aid/body-temperature">
+                <label for="ptemp">Patient Temperature</label>
+                <div class="form-inline">
+                    <input class="form-control" id="ptemp" name="ptemp" type="number" placeholder="100" min="1" max="999" required/>&nbsp;
+                    &nbsp;
+                    <input class="form-control" id="celcius" type="radio" name="deg"/>
+                    <label for="celcius"> &#x2103;</label> &nbsp; &nbsp;
+                    <input class="form-control" id="fahrenheit" type="radio" name="deg"/>
+                    <label for="fahrenheit">&#x2109;</label>
                 </div>
             </div>
-            <div class="col-md-6" title="This field should represent the patient's pulse rate">
-
-                <label>Pulse Rate </label>
-                <div class="row">
-                    <div class="col-xs-4">
-                <input class="form-control" id="pulserate" name="pulserate" type="number" placeholder="80" min="0" required></div>
-                    <div class="row">  per minute</div>
+            <div class="col-md-6"
+                 title="According to the National Institute of Health, the average resting heart rate: for children 10 years and older, and adults (including seniors) is 60 - 100 beats per minute. for well-trained athletes is 40 - 60 beats per minute. Source: http://www.heart.org/HEARTORG/HealthyLiving/PhysicalActivity/FitnessBasics/Target-Heart-Rates_UCM_434341_Article.jsp#.V38P4WgrLb0">
+                <label>Pulse Rate</label>
+                <div class="form-inline">
+                    <input class="form-control" id="pulserate" name="pulserate" type="number" placeholder="e.g. 60"
+                           min="0" max="999" required/> per minute
                 </div>
             </div>
         </div>
-     </fieldset>
-    <fieldset>
+    </fieldset>
+
+    <fieldset
+            title="If the measurement reads 120 systolic and 80 diastolic, you would say '120 over 80' or write '120/80 mmHg.' The chart below shows normal, at-risk, and high blood pressure levels. A blood pressure less than 120/80 mmHg is normal. A blood pressure of 140/90 mmHg or more is too high. Source: http://www.cdc.gov/bloodpressure/measure.htm">
         <legend>Patient Blood Pressure</legend>
         <div class="row">
-           <div class="col-md-6" title="Enter sysltolic blood pressure">
-               <label> Systolic Pressure</label>
-               <div class="row">
-
-                    <div class="col-xs-4">
-                        <input class="form-control" name="syspressure" id="syspressure" type="number" min="0" required>
-                    </div>
-                    <div class="col-xs-2">mmHg</div>
-               </div>
-           </div>
-           <div class="col-md-6" title="Enter diastolic blood pressure ">
-               <label> Diastolic Pressure</label>
-               <div class="row">
-
-                   <div class="col-xs-4">
-                       <input class="form-control" name="diaspressure" id="diaspressure" type="number" min="0" required>
-                   </div>
-                   <div class="col-xs-2">mmHg</div>
-               </div>
-
-           </div>
-
+            <div class="col-md-6" title="Enter systolic blood pressure">
+                <label>Systolic Pressure</label>
+                <div class="form-inline">
+                    <input class="form-control" name="syspressure" id="syspressure" type="number"
+                           placeholder="e.g. 120" min="0" max="999" required/> mmHg
+                </div>
+            </div>
+            <div class="col-md-6" title="Enter diastolic blood pressure ">
+                <label>Diastolic Pressure</label>
+                <div class="form-inline">
+                    <input class="form-control" name="diaspressure" id="diaspressure" type="number"
+                           placeholder="e.g. 80" min="0" max="999" required/> mmHg
+                </div>
+            </div>
         </div>
+    </fieldset>
 
-
-
+    <fieldset
+            title="This pain assessment tool is intended to help patient care providers assess pain according to individual patient needs. Explain and use the 0 to 10 scale for patient self-assessment. Use the faces or behavioral observations to interpret expressed pain when patient cannot communicate his/her pain intensity. Source: https://www.stormontvail.org/userfiles/file/Pain%20Assesment%20sheet.pdf">
         <legend>Universal Pain Assessment Tool</legend>
         <div class="table-responsive">
-            <table class="table"
-                   title="Ask Patient about pain level on scale from 1 to 10, 1 being no pain and 10 being the worst pain possible">
+            <table class="table">
                 <thead>
                 <tr>
                     <th>No pain</th>
@@ -182,100 +175,79 @@
             </table>
         </div>
     </fieldset>
+
     <fieldset>
-        <legend>Pulse oximiter measurement</legend>
+        <legend>Lung Measurement</legend>
         <div class="row">
-                <div class="col-md-6"title="This field should represent the patient's oxygen saturation level">
-
-                    <label>Oxygen saturation </label>
-                        <div class="row">
-                        <div class="col-xs-4"><input class="form-control" id="oxygensaturation" name="oxygensaturation" type="number" min="1" max="100"
-                                   placeholder="Enter a percentage" required></div>
-                        <div class="col-xs-2"> %</div>
-                         </div>
-
+            <div class="col-md-6"
+                 title="Normal arterial oxygen is approximately 75 to 100 millimeters of mercury (mm Hg). Values under 60 mm Hg usually indicate the need for supplemental oxygen. Normal pulse oximeter readings usually range from 95 to 100 percent. Values under 90 percent are considered low. Source: http://www.mayoclinic.org/symptoms/hypoxemia/basics/definition/sym-20050930">
+                <label>Oxygen Saturation (Pulse Oximeter)</label>
+                <div class="form-inline">
+                    <input class="form-control" id="oxygensaturation" name="oxygensaturation"
+                           type="number" min="1" max="100"
+                           placeholder="e.g. 100" required/> %
                 </div>
-
-                <div class="col-md-6" title="This field should represent the patient's respiratory rate per minute">
-
-                         <label>Respiratory rate</label>
-                             <div class="row">
-                                 <div class="col-xs-4">
-
-                                     <input class="form-control" id="resprate" name="resprate" type="number" min="0" placeholder="Eg. 12" required>
-                                     </div>
-                                 <div class="row">
-                                     breaths per minute</div>
-                             </div>
-
-
-                </div>
-        </div>
-
-    </fieldset>
-
-
-    <fieldset>
-        <legend>Blood glucose level</legend>
-        <div class="form-group" title="Enter blood glucose level">
-            <div class="row">
-                <div class="col-md-6">
-                <input class="form-control" id="bloodglucoselevel" name="bloodglucoselevel" type="number" min="0" step="0.1"
-                           placeholder="Enter a blood glucose level" required>
-                </div>
-                <div class="col-xs-2"> mmol/L</div>
             </div>
-         </div>
+
+            <div class="col-md-6"
+                 title="Respiratory rate: A person's respiratory rate is the number of breaths you take per minute. The normal respiration rate for an adult at rest is 12 to 20 breaths per minute. A respiration rate under 12 or over 25 breaths per minute while resting is considered abnormal. Source: http://my.clevelandclinic.org/health/diagnostics/hic_Vital_Signs">
+                <label>Respiratory Rate</label>
+                <div class="form-inline">
+                    <input class="form-control" id="resprate" name="resprate" type="number" min="0"
+                           placeholder="e.g. 12" min="1" max="1000" required/> breaths/minute
+                </div>
+            </div>
+        </div>
     </fieldset>
+
+    <fieldset
+            title="A normal fasting (no food for eight hours) blood sugar level is between 70 and 99 mg/dL. A normal blood sugar level two hours after eating is less than 140 mg/dL. Diabetes is diagnosed by any one of the following: Two consecutive fasting blood glucose tests that are equal to or greater than 126 mg/dL. Source: https://www.virginiamason.org/whatarenormalbloodglucoselevels">
+        <legend>Blood Glucose Level</legend>
+        <div class="form-inline">
+            <input class="form-control" id="bloodglucoselevel" name="bloodglucoselevel" type="number" min="0"
+                   step="0.1" placeholder="e.g. 140" required> mg/dL
+        </div>
+    </fieldset>
+
+    <hr/>
 
     <div>
         <button type="button" class="btn btn-info" id="btn">Submit</button>
     </div>
+    <br/>
 </form>
+
+
 <!--scripts-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <!-- Bootstrap Date-Picker Plugin -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 <script>$(".date-picker").datepicker();
 </script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/additional-methods.min.js"></script>
 <script>
-
-    $(document).ready(function(){
-       $("#btn").click(function()
-       {
-           var validator = $( "#registration" ).validate({
-               rules: {
-                   deg: {
-                       required: true
-                   },
-                   rbtn: {
-                       required: true
-                   }
-               },
-               highlight: function(element) {
-                   $(element).closest('.form-group').addClass('has-error');
-               },
-               unhighlight: function(element) {
-                   $(element).closest('.form-group').removeClass('has-error');
-               },
-               errorElement: 'span',
-               errorClass: 'help-block',
-               errorPlacement: function(error, element) {
-                   if(element.parent('.input-group').length) {
-                       error.insertAfter(element.parent());
-                   } else {
-                       error.insertAfter(element);
-                   }
-               }
-           });
-           validator.form();
-       });
-
-
-
+    $(document).ready(function () {
+        $("#btn").click(function () {
+            var selector = 'div:not(.input-group)';
+            var validator = $("#registration").validate({
+                highlight: function (element) {
+                    $(element).closest(selector).addClass('has-error');
+                },
+                unhighlight: function (element) {
+                    $(element).closest(selector).removeClass('has-error');
+                },
+                errorElement: 'span',
+                errorClass: 'help-block',
+                errorPlacement: function (error, element) {
+                    var parent = $(element).closest(selector);
+                    error.appendTo(parent);
+                }
+            });
+            validator.form();
+        });
     });
 </script>
 
