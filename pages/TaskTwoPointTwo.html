@@ -42,7 +42,8 @@
     <ol>
         <li><i>Independent Identification</i>: the application displays an illustration of an object (e.g. car, truck,
             motorcycle, etc.), the child either speaks the name of the object or says, "what is that?", the application
-            either replies with a success message (e.g. song?) or replies with the name of the object, the child moves
+            either replies with a success message (e.g. song?) or replies with the name of the object, the child
+            advances
             to the next illustration.
         </li>
         <li><i>Cooperative Identification</i>: the parent chooses an illustration of an object (e.g. car, truck,
@@ -63,6 +64,31 @@
         child's tablet and the parent's phone seems complicated, though very possible, but may involve a significant
         amount of infrastructure work.
     </p>
+
+    <h3>Content Model</h3>
+    <ol>
+        <li><i>illustration</i>: a picture of a thing, used by the child for identification; should have a simple to
+            speak name and possible synonyms as metadata.
+        </li>
+        <li><i>song</i>: sounds used by the application to indicate successful identification; may include some
+            graphical element such as video playback of the singer of the song.
+        </li>
+    </ol>
+
+    <h3>Control Model</h3>
+    <ol>
+        <li><i>display</i>: the application or parent chooses what illustration to show on the tablet screen; this
+            should be visible for both the parent and child.
+        </li>
+        <li><i>identify</i>: the child names the illustration; this control action will likely be the most difficult
+            to determine if voice activation is used; it will be much easier to implement if the parent assists the
+            application in determining whether the child's identification was correct (in fact, this should be included
+            as a feature to support the latter scenarios).
+        </li>
+        <li><i>advance</i>: the child or parent can move to the next illustration; no widget is specified in this
+            analysis but right-to-left swiping may make sense (observed in ethnography study).
+        </li>
+    </ol>
 </div>
 
 <div class="footer">
