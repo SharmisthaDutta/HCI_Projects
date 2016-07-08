@@ -92,11 +92,7 @@
             <div class="col-xs-3"
                  title="This field should represent the date/time when the patient data collection was started">
                 <label>Current Time</label>
-                <div class="input-group">
-                    <input id="time" name="time" type="time"
-                           placeholder="time" required/>
-
-                </div>
+                <input class="form-control" id="time" name="time" type="time" placeholder="time" required />
             </div>
         </div>
     </fieldset>
@@ -108,7 +104,8 @@
                  title="Most people think of a 'normal' body temperature as an oral temperature of 98.6°F (37°C). This is an average of normal body temperatures. Your temperature may actually be 1°F (0.6°C) or more above or below 98.6°F (37°C). Source: http://www.webmd.com/first-aid/body-temperature">
                 <label for="ptemp">Patient Temperature</label>
                 <div class="form-inline">
-                    <input class="form-control" id="ptemp" name="ptemp" type="number" placeholder="100" min="1" max="999" required/>&nbsp;
+                    <input class="form-control" id="ptemp" name="ptemp" type="number" placeholder="100" min="1"
+                           max="999" required/>&nbsp;
                     &nbsp;
                     <input class="form-control" id="celcius" type="radio" name="deg"/>
                     <label for="celcius"> &#x2103;</label> &nbsp; &nbsp;
@@ -239,6 +236,12 @@
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/additional-methods.min.js"></script>
 <script>
     $(document).ready(function () {
+        var now = new Date();
+        var date = (now.getMonth() + 1) + '/' + now.getDate() + '/' +  now.getFullYear();
+        $('#date-picker-2').val(date);
+        var time = now.toTimeString().replace(/.*(\d{2}:\d{2}):\d{2}.*/, "$1"); // thanks to http://stackoverflow.com/a/12612778
+        $('#time').val(time);
+
         $("#btn").click(function () {
             var selector = 'div:not(.input-group)';
             var validator = $("#registration").validate({
