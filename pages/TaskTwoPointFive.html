@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 2.5: Usability Test Results</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="../css/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Droid+Serif|Lobster"/>
+    <link rel="stylesheet" href="../css/main.css"/>
+</head>
+<body>
+
+<h1>Task 2.5: Usability Test Results</h1>
+<div class="container">
+    <h3>Test Procedures</h3>
+    <p>Given the (unfinished) <a href="../binary/kid-id.apk">KidID APK</a>, users were asked to perform the following
+        tasks and assist their child (summary below):</p>
+
+    <h3>Performance Metrics</h3>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Requirement</th>
+            <th>Quantified Expectation</th>
+            <th>Result</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Adult: given pairing instructions, the adult user must pair the adult and child devices</td>
+            <td>less than 60 seconds</td>
+            <td>not yet implemented</td>
+        </tr>
+        <tr>
+            <td>Adult: given minimal instructions, the adult user must select a truck as the next illustration</td>
+            <td>less than 30 seconds</td>
+            <td>9 seconds</td>
+        </tr>
+        <tr>
+            <td>Adult: given minimal instructions, the adult user must manually identify an illustration</td>
+            <td>less than 30 seconds</td>
+            <td>2 seconds</td>
+        </tr>
+        <tr>
+            <td>Adult: given minimal instructions, the adult user must switch from adult mode to child mode and back
+            </td>
+            <td>less than 45 seconds</td>
+            <td>5 seconds</td>
+        </tr>
+        <tr>
+            <td>Child: given an adult demonstrating how to swipe illustrations, the child user must be able to learn to
+                swipe illustrations
+            </td>
+            <td>less than 3 minutes</td>
+            <td>2 minutes (with limited success)</td>
+        </tr>
+        <tr>
+            <td>Child: given an adult demonstrating how to identify an illustration, the child user must be able to
+                learn to verbally identify illustrations
+            </td>
+            <td>less than 5 minutes</td>
+            <td>2 minutes (with prompting)</td>
+        </tr>
+        <tr>
+            <td>Application: the application must quickly parse child user's correct illustration identification
+                (verbal)
+            </td>
+            <td>under 1 second</td>
+            <td>yes</td>
+        </tr>
+        <tr>
+            <td>Application: on advance, the application must display the next illustration quickly</td>
+            <td>less than 0.5 seconds</td>
+            <td>yes</td>
+        </tr>
+        <tr>
+            <td>Application: on advance, the swipe gesture must follow the finger with minimal lag</td>
+            <td>less than 0.1 second</td>
+            <td>yes</td>
+        </tr>
+        <tr>
+            <td>Application: adult actions must reflect quickly on the child device</td>
+            <td>less than 1 second</td>
+            <td>not yet implemented</td>
+        </tr>
+        </tbody>
+    </table>
+
+
+    <h3>Preference Metrics</h3>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Requirement</th>
+            <th>Quantified Expectation</th>
+            <th>Result</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Adult: on a scale of 1-10, rate the ease of setup, 1 being hard to set up and 10 being very easy to set
+                up
+            </td>
+            <td>average > 7</td>
+            <td>not yet implemented</td>
+        </tr>
+        <tr>
+            <td>Adult: on a scale of 1-10, how do you rate the quality of the verbal recognition of the application, 1
+                being worst quality and 10 being best quality
+            </td>
+            <td>average > 7</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>Adult: on a scale of 1-10, how easy was it to navigate to a illustration of your choice, 1 being very
+                difficult and 10 being quick and easy
+            </td>
+            <td>average > 7</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>Adult: would you recommend this application to a friend?</td>
+            <td>greater than 75% yes</td>
+            <td>100%</td>
+        </tr>
+        <tr>
+            <td>Adult: how much would you be willing to pay for the application</td>
+            <td>average > $3</td>
+            <td>99 cents</td>
+        </tr>
+        <tr>
+            <td>Child: how long did the child use the application?</td>
+            <td>average > 30 minutes</td>
+            <td>2 minutes</td>
+        </tr>
+        <tr>
+            <td>Child: did the child request the application again in the same car trip?</td>
+            <td>75% yes</td>
+            <td>untested, no car trips</td>
+        </tr>
+        <tr>
+            <td>Child: how many consecutive illustrations did the child attempt?</td>
+            <td>average > 10</td>
+            <td>5</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h3>Open-ended Questions</h3>
+    <p><b>Adult: what did you like the best about the voice-enabled application?</b></p>
+    <p>Selecting illustrations was very simple in adult mode</p>
+    <p><b>Adult: what did you like the least about the voice-enabled application?</b></p>
+    <p>Not enough images, "hate the colors", "rhinoceros" not easily recognized</p>
+    <p><b>Adult: do you have any other comments, feature requests, or suggestions?</b></p>
+    <p>Would prefer iOS app</p>
+
+    <h3>Summary</h3>
+    <p>For adult users accustomed to Android's material design guidelines (and iOS applications), the adult mode
+        navigation was exceedingly simple. Also, adults instantly learned how to identify illustrations and move to new
+        illustrations from within child mode. A more diverse (e.g. older adults, minimally experienced phone users) test
+        user distribution and a larger test sample size is needed for determining the success of the UI, but the target
+        demographic, young adults with children, were quick to adapt to the user interface and implemented widgets.</p>
+    <p>More importantly, children were able to play with prompting from the adult to recognize the illustration and
+        swipe to the next illustration. The application would frequently mis-recognize the verbal cues, sometimes
+        marking a success when it was not and other times failing to recognize the child's cues at all. With the added
+        issue of background noise, this problem highlights the importance of a paired application approach, where the
+        adult can guide the child through the illustrations by choosing the next illustration if necessary and marking
+        the illustration as a success (or not) as necessary.
+    </p>
+</div>
+
+<div class="footer">
+    <p>Copyright &copy; 2016 - Sharmistha Dutta & Andrew Brown - All Rights Reserved -</p>
+</div>
+
+</body>
+</html>
