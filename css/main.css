@@ -4,7 +4,7 @@ body {
 body > h1 {
     text-align: center;
     color:  red;
-    font-size: 96px;
+    font-size: 50px;
     font-family: "Lobster", cursive, serif;
     text-shadow: 1px 1px 1px white;
 }
